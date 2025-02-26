@@ -1,87 +1,218 @@
+<!--
+kommentaar
+-->
 <!DOCTYPE html>
+<!--HTML5 Deklareerimine-->
 <html lang="et">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minu veebileht</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <h1>Minu Veebileht</h1>
-    </header>
+	<head>
+		<title> Sergachev koduleht</title>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- koddering UTF-8-->
+		<!--Pöördume css faili sisse-->
+		<link rel="stylesheet" type="text/css" href="homeStyle.css">
+		<script src="indexSctript.js"></script>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js" integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
+
+
+		<script>
+		
+		function redH1() {
+			$('h1').css('color', 'red');
+		}
+
+		function whiteH1() {
+			$('h1#headH1').css('color', 'white')
+		}
+
+		function page() {
+			$('h1#headH1').mouseenter(redH1);
+			$('h1#headH1').mouseleave(whiteH1);
+			$('#smile').draggable();
+            $('#smile').bind("drag", liikumisKoord);
+
+		}
+		function panelSlider() {
+			$(document).ready(function(){
+				$("#flip").one("click", function(){
+					if ($(this).val() === "Klõpsake pildi peitmiseks") {
+						$(this).val("Klõpsake pildi kuvamiseks");
+					} else {
+						$(this).val("Klõpsake pildi peitmiseks");
+					}
+					$("#panel").slideToggle("slow");
+				});
+			});
+			
+		};
+
+		function liikumisKoord(event, ui) {
+			var koht = ui.offset;
+			$('#smile').html(koht.top + " - " + koht.left)
+		}
+
+		</script>
+
+	</head>
 	
-    <section id="about">
-        <h2>Minust</h2>
-        <img src="pilt.jpg" alt="Minu pilt" id="profile-pic">
-        <p><strong>Eesnimi:</strong> Bogdan</p>
-        <p><strong>Perekonnanimi:</strong> Sergachev</p>
-        <p><strong>Eriala:</strong> Noorem Tarkvaraarendaja</p>
-        <p><strong>Keel:</strong> Vene, Inglise</p>
-    </section>
-
-    <section id="skills">
-        <h2>IT-tehnoloogiad, mida olen õppinud</h2>
-        <ul>
-            <li>HTML, CSS</li>
-            <li>Python, Java, Kotlin, C#</li>
-            <li>SQL</li>
-        </ul>
-    </section>
-
-    <section id="abilities">
-        <h2>Minu oskused arvuti taga</h2>
-        <p>Ma oskan töötada erinevate veebitehnoloogiatega, programmeerida, andmebaase hallata ja arendada täisfunktsionaalseid veebirakendusi.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Parimad projektid</h2>
-        <ul>
-            <li><a href="https://github.com/neflor1n/PracticeJava_">Projekt 1</a></li>
-            <li><a href="https://github.com/neflor1n/secondMobileApp">Projekt 2</a></li>
-            <li><a href="https://github.com/neflor1n/Kotlin-Learning">Projekt 3</a></li>
-        </ul>
-    </section>
-
-    <section id="portfolio">
-        <h2>Minu WordPress portfell</h2>
-        <a href="https://bogdansergachev23.thkit.ee/wp/">Minu WordPress portfell</a>
-    </section>
-
-	<section id="MVP">
-		<h2>Mis tahendab MVP?</h2>
-		<p><strong>Minimaalne elujõuline toode </strong> on toote, teenuse või teenuse testversioon, millel on minimaalne funktsioonide kogum (mõnikord isegi üks), mis pakub lõpptarbijale väärtust.</p>
-	</section>
-
-<section id="git-remote-repo">
-        <h2>Kuidas luua Git remote repo?</h2>
-        <p>Järgige neid samme, et luua Git remote repository ja ühendada oma kohalik repository:</p>
-
-        <h3>1. Samm: Loo kaugrepo</h3>
-        <p>Minge GitHubi (või mõnda muud teenust, nagu GitLab või Bitbucket), et luua uus repository. Täitke järgmised sammud:</p>
-        <ul>
-            <li>Logige sisse oma Git teenusesse (näiteks GitHubi).</li>
-            <li>Klõpsake nuppu "New" uue repository loomiseks.</li>
-            <li>Täidake repository nimi, kirjeldus ja valige, kas see on avalik või privaatne.</li>
-            <li>Klõpsake "Create repository" (ärge lisage README faili veel).</li>
-        </ul>
-	 <h3>2. Samm: Ühenda oma kohalik repository kaugrepoga</h3>
-        <p>Avage oma terminal ja kasutage järgmist käsku, et ühendada oma kohalik repository kaugrepoga:</p>
-        <pre><code>git remote add origin <remote_repository_URL></code></pre>
-        <p>Näiteks:</p>
-        <pre><code>git remote add origin https://github.com/username/my-repo.git</code></pre>
 	
-	<h3>3. Samm: Saada oma muudatused kaugreposse</h3>
-        <p>Kui olete oma kohalikus repository's ühenduse loonud, saate oma muudatused kaugrepository'sse saata:</p>
-        <pre><code>git push -u origin master</code></pre>
-        <p>See käsk saadab master haru esmakordselt kaugrepositooriumisse.</p>
 
-	<h3>4. Samm: Kontrolli ühendust</h3>
-        <p>Veenduge, et ühendus on õigesti tehtud, kasutades järgmist käsku:</p>
-        <pre><code>git remote -v</code></pre>
-</section>
-    <footer>
-        <p>&copy; 2025 Bogdan Sergachev.</p>
-    </footer>
-</body>
+
+	<body onload="setInterval('vahelduvPilt()', 1000), page()">
+		<!--päris-шапка страницы-->
+		<header>
+			<h1 id="headH1">Bogdan Sergachev veebirakenduste koduleht</h1>
+			<div class="switch-container">
+				<label class="switch" >
+					<input type="checkbox">
+					<span class="slider" ></span>
+				</label>
+				<a class="abutton">Teema muutmine</a>
+			</div>
+		</header>
+		
+		<!--navigeerimismenüü-->
+		<nav>
+			<ul>
+				<li><a href="index.html">Kodu</a></li>
+				<li><a href="lingid.html">Kasulikud lingid</a></li>
+				<li><a href="tood.html">Tehtud tööd/projektid</a></li>
+				<li><a href="valimus.html">Teine valimus</a></li>
+                <li><a href="Ajakava.html">Tunniplaan</a></li>
+                <li><a href="/wp">Wordpress</a></li>
+			</ul>	
+		</nav>
+		
+		<!--Sisu - содержимое -->
+		<main>
+			<div class="buttonsJQuery">
+
+				<input type="button" value="klõpsake pildi kuvamiseks" id="flip" onclick="panelSlider()">
+
+				<div id="panel">
+					<img src="Funny-emoji-face-removebg-preview.png" alt="Funny-emoji" id="smile">
+				</div>
+
+				<input type="button" value="Paremale" 
+				onclick="($('#container1').animate({left: '180px'}, 1000), 
+				$('#container2').animate({left: '180px'}, 1000),
+				$('#container3').animate({left: '180px'}, 1000),
+				$('#container4').animate({left: '180px'}, 1000))">
+
+				<input type="button" value="Vasakule"
+				onclick="($('#container1').animate({left: '0'}, 1000), 
+				$('#container2').animate({left: '0'}, 1000),
+				$('#container3').animate({left: '0'}, 1000),
+				$('#container4').animate({left: '0'}, 1000))">
+				
+
+			</div>
+			<div class="section-container">
+				<section class="section1">
+					<h2>Veebirakenduste aluste põhiteemad</h2>
+					<div class="container" id="container1">	
+						<ul>
+							<li>HTML, CSS</li>
+							<li>Javascript</li>
+							<li>PHP+mySQL</li>
+							<li>Wordpress</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="section2">
+					<h2>Pildi muutmine</h2>
+					<div class="container" id="container2">
+						<img src="pildit/pildid/auto.png" alt="pildid" id="pilt" >
+					</div>
+				</section>
+
+				<section class="section3">
+					<h2>Wordpress`i teemad</h2>
+					<div class="container" id="container3">
+						<ul>
+							<li>WP paigaldus</li>
+							<li>WP seadistus</li>
+							<li>WP Multisite plugin</li>
+							<li>E-poe loomine</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="section4">
+					<h2>Pildi muutmine</h2>
+					<div class="container" id="container4">
+						<img src="pildit/pildid/auto.png" alt="pildid" id="pilt2" onmouseover="HiirSisse()" onmouseout="HiirValja()">
+					</div>
+				</section>
+			</div>
+		<!--
+			<details>
+				<summary>
+					Veebirakenduste aluste põhiteemad
+				</summary>
+				<ul>
+						<li>HTML, CSS</li>
+						<li>Javascript</li>
+						<li>PHP+mySQL andmebaasiga ühendumine</li>
+						<li>Wordpress</li>
+					</ul>
+			</details><br><br>
+			<br>
+			<details>
+				<summary>
+					Wordpress'i teemad
+				</summary>
+				<ul>
+						<li>WP paigaldus</li>
+						<li>WP seadistus</li>
+						<li>WP Multisite plugin</li>
+						<li>WP kontaktivormide loomine</li>
+						<li>E-poe loomine</li>
+						<li>jne</li>
+					</ul>
+			</details>
+-->
+			<button class="btn-github" onclick="window.location.href='https://github.com/neflor1n'">
+		<svg
+		width="16"
+		height="16"
+		viewBox="0 0 16 16"
+		fill="none"
+		xmlns="https://github.com/neflor1n">
+		<path
+		d="M7.99992 1.33331C7.12444 1.33331 6.25753 1.50575 5.4487 1.84078C4.63986 2.17581 3.90493 2.66688 3.28587 3.28593C2.03563 4.53618 1.33325 6.23187 1.33325 7.99998C1.33325 10.9466 3.24659 13.4466 5.89325 14.3333C6.22659 14.3866 6.33325 14.18 6.33325 14C6.33325 13.8466 6.33325 13.4266 6.33325 12.8733C4.48659 13.2733 4.09325 11.98 4.09325 11.98C3.78659 11.2066 3.35325 11 3.35325 11C2.74659 10.5866 3.39992 10.6 3.39992 10.6C4.06659 10.6466 4.41992 11.2866 4.41992 11.2866C4.99992 12.3 5.97992 12 6.35992 11.84C6.41992 11.4066 6.59325 11.1133 6.77992 10.9466C5.29992 10.78 3.74659 10.2066 3.74659 7.66665C3.74659 6.92665 3.99992 6.33331 4.43325 5.85998C4.36659 5.69331 4.13325 4.99998 4.49992 4.09998C4.49992 4.09998 5.05992 3.91998 6.33325 4.77998C6.85992 4.63331 7.43325 4.55998 7.99992 4.55998C8.56659 4.55998 9.13992 4.63331 9.66659 4.77998C10.9399 3.91998 11.4999 4.09998 11.4999 4.09998C11.8666 4.99998 11.6333 5.69331 11.5666 5.85998C11.9999 6.33331 12.2533 6.92665 12.2533 7.66665C12.2533 10.2133 10.6933 10.7733 9.20659 10.94C9.44659 11.1466 9.66659 11.5533 9.66659 12.1733C9.66659 13.0666 9.66659 13.7866 9.66659 14C9.66659 14.18 9.77325 14.3933 10.1133 14.3333C12.7599 13.44 14.6666 10.9466 14.6666 7.99998C14.6666 7.1245 14.4941 6.25759 14.1591 5.44876C13.8241 4.63992 13.333 3.90499 12.714 3.28593C12.0949 2.66688 11.36 2.17581 10.5511 1.84078C9.7423 1.50575 8.8754 1.33331 7.99992 1.33331V1.33331Z"
+		fill="currentcolor"></path>
+</svg>
+<span>Vaata Githubist</span>
+</button>
+		</main>
+
+
+		<!--jalus - подвал -->
+		<footer class="indexFooter">
+			<p>&copy;BogdanS 2024</p>
+		</footer>
+
+
+		<script>
+		const switchToggle = document.querySelector('.switch input');
+		const body = document.body;
+		const header = document.querySelector('header');
+		const nav = document.querySelector('nav');
+		const footer = document.querySelector('footer');
+		const divJQuery = document.querySelector('.buttonsJQuery');
+
+		switchToggle.addEventListener('change', () => {
+			body.classList.toggle('dark-theme');
+			header.classList.toggle('dark-theme');
+			nav.classList.toggle('dark-theme');
+			footer.classList.toggle('dark-theme');
+			divJQuery.classList.toggle('dark-theme');
+		});
+		</script>
+		
+		
+	</body>
 </html>
