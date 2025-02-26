@@ -55,3 +55,38 @@ footer {
     padding: 10px;
     margin-top: auto; 
 }
+
+#MVP {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    margin: 30px auto; 
+    max-width: 800px; 
+    transition: all 0.3s ease-in-out;
+}
+
+#MVP h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#MVP p {
+    font-size: 1.1rem; 
+    color: #333333;
+    line-height: 1.6;
+    text-align: justify; 
+}
+
+#MVP p strong {
+    color: #4CAF50; 
+    font-weight: bold; 
+}
+
+#MVP:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-5px); 
+}
