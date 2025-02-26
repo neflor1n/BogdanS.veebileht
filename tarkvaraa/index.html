@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minu veebileht</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Minu Veebileht</h1>
+    </header>
+	
+    <section id="about">
+        <h2>Minust</h2>
+        <img src="pilt.jpg" alt="Minu pilt" id="profile-pic">
+        <p><strong>Eesnimi:</strong> Bogdan</p>
+        <p><strong>Perekonnanimi:</strong> Sergachev</p>
+        <p><strong>Eriala:</strong> Noorem Tarkvaraarendaja</p>
+        <p><strong>Keel:</strong> Vene, Inglise</p>
+    </section>
 
+    <section id="skills">
+        <h2>IT-tehnoloogiad, mida olen õppinud</h2>
+        <ul>
+            <li>HTML, CSS</li>
+            <li>Python, Java, Kotlin, C#</li>
+            <li>SQL</li>
+        </ul>
+    </section>
+
+    <section id="abilities">
+        <h2>Minu oskused arvuti taga</h2>
+        <p>Ma oskan töötada erinevate veebitehnoloogiatega, programmeerida, andmebaase hallata ja arendada täisfunktsionaalseid veebirakendusi.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Parimad projektid</h2>
+        <ul>
+            <li><a href="https://github.com/neflor1n/PracticeJava_">Projekt 1</a></li>
+            <li><a href="https://github.com/neflor1n/secondMobileApp">Projekt 2</a></li>
+            <li><a href="https://github.com/neflor1n/Kotlin-Learning">Projekt 3</a></li>
+        </ul>
+    </section>
+
+    <section id="portfolio">
+        <h2>Minu WordPress portfell</h2>
+        <a href="https://bogdansergachev23.thkit.ee/wp/">Minu WordPress portfell</a>
+    </section>
+
+	<section id="MVP">
+		<h2>Mis tahendab MVP?</h2>
+		<p><strong>Minimaalne elujõuline toode </strong> on toote, teenuse või teenuse testversioon, millel on minimaalne funktsioonide kogum (mõnikord isegi üks), mis pakub lõpptarbijale väärtust.</p>
+	</section>
+
+<section id="git-remote-repo">
+        <h2>Kuidas luua Git remote repo?</h2>
+        <p>Järgige neid samme, et luua Git remote repository ja ühendada oma kohalik repository:</p>
+
+        <h3>1. Samm: Loo kaugrepo</h3>
+        <p>Minge GitHubi (või mõnda muud teenust, nagu GitLab või Bitbucket), et luua uus repository. Täitke järgmised sammud:</p>
+        <ul>
+            <li>Logige sisse oma Git teenusesse (näiteks GitHubi).</li>
+            <li>Klõpsake nuppu "New" uue repository loomiseks.</li>
+            <li>Täidake repository nimi, kirjeldus ja valige, kas see on avalik või privaatne.</li>
+            <li>Klõpsake "Create repository" (ärge lisage README faili veel).</li>
+        </ul>
+	 <h3>2. Samm: Ühenda oma kohalik repository kaugrepoga</h3>
+        <p>Avage oma terminal ja kasutage järgmist käsku, et ühendada oma kohalik repository kaugrepoga:</p>
+        <pre><code>git remote add origin <remote_repository_URL></code></pre>
+        <p>Näiteks:</p>
+        <pre><code>git remote add origin https://github.com/username/my-repo.git</code></pre>
+	
+	<h3>3. Samm: Saada oma muudatused kaugreposse</h3>
+        <p>Kui olete oma kohalikus repository's ühenduse loonud, saate oma muudatused kaugrepository'sse saata:</p>
+        <pre><code>git push -u origin master</code></pre>
+        <p>See käsk saadab master haru esmakordselt kaugrepositooriumisse.</p>
+
+	<h3>4. Samm: Kontrolli ühendust</h3>
+        <p>Veenduge, et ühendus on õigesti tehtud, kasutades järgmist käsku:</p>
+        <pre><code>git remote -v</code></pre>
+</section>
+    <footer>
+        <p>&copy; 2025 Bogdan Sergachev.</p>
+    </footer>
+</body>
+</html>
